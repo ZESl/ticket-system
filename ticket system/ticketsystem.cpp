@@ -9,14 +9,7 @@ ticketsystem::ticketsystem(QWidget *parent)
 {
     ui.setupUi(this);
 
-	// 原来文件清空
-	QFile myfile("ticket.txt");
-	if (myfile.open(QFile::WriteOnly | QIODevice::Truncate))
-	{
-		QTextStream out(&myfile);
-		out << "" << endl;
-	}
-	// timer
+	// set a timer
 	timer = new QTimer(this);
 	connect(timer, SIGNAL(timeout()), this, SLOT(handleTimeout()));
 
@@ -25,15 +18,24 @@ ticketsystem::ticketsystem(QWidget *parent)
 
 void ticketsystem::on_pushButton_clicked()
 {
-	// 清空展示框
+	// clear the log file
+	QFile myfile("ticket.txt");
+	if (myfile.open(QFile::WriteOnly | QIODevice::Truncate))
+	{
+		QTextStream out(&myfile);
+		out << "" << endl;
+	}
+
+	// clear the text browsers
 	ui.textBrowser->setText("");
 	ui.textBrowser_2->setText("");
 
-	// 判断票数框
+	// check if is integer
 	QString totalNumText = ui.lineEdit->text();
 	if (VerifyNumber(totalNumText) && totalNumText.toInt()>0) {
-		//start the program
+		// start the timer
 		timer->start(200);
+		// start the program
 		createThread();
 	}
 	else {
@@ -75,9 +77,9 @@ DWORD WINAPI SellTicketThreadProc(LPVOID lpParameter)
 
 			Info->wndShow->append(str);
 
-			// 存入log file
+			// save log file
 			QFile myfile("ticket.txt");
-			if (myfile.open(QFile::WriteOnly | QIODevice::Append))//注意WriteOnly是往文本中写入的时候用，ReadOnly是在读文本中内容的时候用，Truncate表示将原来文件中的内容清空
+			if (myfile.open(QFile::WriteOnly | QIODevice::Append))
 			{
 				QTextStream out(&myfile);
 				out << str << endl;

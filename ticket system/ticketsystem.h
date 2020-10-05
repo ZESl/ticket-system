@@ -30,13 +30,14 @@ private slots:
 
 private:
     Ui::ticketsystemClass ui;
-	HANDLE thread[2]; //用于存储线程句柄
-	DWORD  dwThreadID[3]; //用于存储线程的ID  
-	SellThreadPara para[2]; //传递给线程处理函数的参数
-	int remainNum = 0;
+
+	// thread related
+	HANDLE thread[2];
+	SellThreadPara para[2]; // 传递给线程处理函数的参数
+
+	QTimer *timer;	//timer update the interface every 0.2s
+	int remainNum = 0;	// # remaining tickets
 
 	void createThread();
 	bool VerifyNumber(QString);
-
-	QTimer *timer;
 };
