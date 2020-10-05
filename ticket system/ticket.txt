@@ -1,0 +1,17 @@
+
+No.1 window has sold a ticket: 3.
+
+No.2 window has sold a ticket: 2.
+
+No.1 window has sold a ticket: 1.
+
+No.2 window has sold a ticket: 3.
+
+No.1 window has sold a ticket: 5.
+
+No.2 window has sold a ticket: 1.
+
+No.1 window has sold a ticket: 4.
+
+No.2 window has sold a ticket: 2.
+
