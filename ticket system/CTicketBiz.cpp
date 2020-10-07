@@ -28,10 +28,12 @@ void CTicketBiz::GenerateTicket(int totalNum)
 int CTicketBiz::GetRandTicket()
 {
 	bool flag = true;
-	int num = rand() % m_nTotalNum + 1;
+	int num = 0;	//顺序
+	//int num = rand() % m_nTotalNum + 1;	//随机
 
 	while (flag) {
-		num = rand() % m_nTotalNum + 1;
+		num += 1;	//顺序
+		//num = rand() % m_nTotalNum + 1;	//随机
 		// 如果m_pTicket里，票号为num的票还存在，return num，flag设为false，跳出循环
 		if (m_pTicket[num-1]==1) {
 			flag = false;

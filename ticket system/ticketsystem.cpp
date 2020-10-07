@@ -1,6 +1,7 @@
 #include "ticketsystem.h"
 #include <QDebug>
 #include <QTimer>
+#include <QDateTime>
 
 CRITICAL_SECTION cs;
 
@@ -66,11 +67,15 @@ DWORD WINAPI SellTicketThreadProc(LPVOID lpParameter)
 
 		if (Info->biz->GetBalanceNum() > 0) {
 			int ticketno = Info->biz->GetRandTicket();
-		
+			QDateTime current_date_time = QDateTime::currentDateTime();
+			QString current_date = current_date_time.toString("yyyy.MM.dd hh:mm:ss.zzz ddd");
+
 			QString str = "No.";
 			str.append(QString::number(Info->win_no));
 			str.append(" window has sold a ticket: ");
 			str.append(QString::number(ticketno));
+			str.append("  ***  ");
+			str.append(current_date);		//附加系统时间
 			str.append(".\n");
 
 			qDebug() << str;

@@ -1,21 +1,17 @@
 
-No.2 window has sold a ticket: 8.
+No.1 window has sold a ticket: 1  ***  2020.10.07 14:59:59.238 周三.
 
-No.1 window has sold a ticket: 5.
+No.2 window has sold a ticket: 2  ***  2020.10.07 14:59:59.244 周三.
 
-No.2 window has sold a ticket: 1.
+No.1 window has sold a ticket: 3  ***  2020.10.07 15:00:00.245 周三.
 
-No.1 window has sold a ticket: 10.
+No.2 window has sold a ticket: 4  ***  2020.10.07 15:00:00.253 周三.
 
-No.2 window has sold a ticket: 9.
+No.1 window has sold a ticket: 5  ***  2020.10.07 15:00:01.252 周三.
 
-No.1 window has sold a ticket: 3.
+No.2 window has sold a ticket: 6  ***  2020.10.07 15:00:01.258 周三.
 
-No.2 window has sold a ticket: 6.
+No.1 window has sold a ticket: 7  ***  2020.10.07 15:00:02.257 周三.
 
-No.1 window has sold a ticket: 2.
-
-No.2 window has sold a ticket: 7.
-
-No.1 window has sold a ticket: 4.
+No.2 window has sold a ticket: 8  ***  2020.10.07 15:00:02.261 周三.
 
